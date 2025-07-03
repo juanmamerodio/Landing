@@ -1,0 +1,28 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0A;
+            color: #E5E7EB; /* gray-200 */
+        }
+        /* Efecto de gradiente sutil en el fondo */
+        .gradient-bg {
+            background-image: radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.15), transparent 30%),
+                              radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.1), transparent 30%);
+        }
+        /* Animación de entrada para elementos */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 10s ease-out forwards;
+        }
+        /* Aplicar animación con retraso a elementos hijos */
+        .stagger-children > * {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        .stagger-children > *:nth-child(1) { animation-delay: 0.2s; }
+        .stagger-children > *:nth-child(2) { animation-delay: 0.4s; }
+        .stagger-children > *:nth-child(3) { animation-delay: 0.6s; }
+        .stagger-children > *:nth-child(4) { animation-delay: 0.8s; }
+    
